@@ -1,24 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="stay_away_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Closest device is " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAb-lw-zGS">
+                                <rect key="frame" x="128.66666666666666" y="515" width="170.99999999999997" height="24"/>
+                                <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are not safe!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cr3-cj-2xr">
+                                <rect key="frame" x="64.666666666666686" y="381" width="299" height="41"/>
+                                <fontDescription key="fontDescription" name="Galvji-Bold" family="Galvji" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are safe!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lus-eC-JTg">
+                                <rect key="frame" x="98" y="380.66666666666669" width="232" height="41.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Galvji-Bold" family="Galvji" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQ3-Yh-bRk">
+                                <rect key="frame" x="24" y="430" width="380" height="66"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="QUT-oE-BPR"/>
+                                    <constraint firstAttribute="width" secondItem="XQ3-Yh-bRk" secondAttribute="height" multiplier="190:33" id="SZJ-9q-h1C"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="365" id="l1k-ct-A4l"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Galvji-Bold" family="Galvji" pointSize="35"/>
+                                <state key="normal" title="START SCANNING">
+                                    <color key="titleColor" red="0.48096240078333941" green="0.82404352365753764" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleScanButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bmn-RA-YNt"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="approximately _._ feet away" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UhO-4p-UkQ">
+                                <rect key="frame" x="77" y="535" width="274" height="24"/>
+                                <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="In order to use the app, tap the &quot;Start Scanning&quot; button to initiate a scan of any nearby personal devices. " textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qc3-bI-fWx">
+                                <rect key="frame" x="25" y="293" width="378" height="95"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="95" id="3mF-pi-8BR"/>
+                                    <constraint firstAttribute="width" constant="378" id="M1D-eB-chh"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="SCANNING FOR NEARBY DEVICES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GEP-Xz-Yt4">
+                                <rect key="frame" x="37.666666666666657" y="515" width="353" height="26"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bJX-vP-Uln">
+                                <rect key="frame" x="77" y="385" width="274" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="274" id="rcm-wY-m6a"/>
+                                    <constraint firstAttribute="height" constant="10" id="up2-Xb-typ"/>
+                                </constraints>
+                                <color key="progressTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="trackTintColor" systemColor="systemBlueColor"/>
+                            </progressView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UhO-4p-UkQ" firstAttribute="top" secondItem="XQ3-Yh-bRk" secondAttribute="bottom" constant="39" id="583-pp-lgY"/>
+                            <constraint firstItem="XQ3-Yh-bRk" firstAttribute="centerX" secondItem="UhO-4p-UkQ" secondAttribute="centerX" id="75d-wq-w6e"/>
+                            <constraint firstItem="XQ3-Yh-bRk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8Sb-h1-trv"/>
+                            <constraint firstItem="qc3-bI-fWx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fts-eO-dp9"/>
+                            <constraint firstItem="lus-eC-JTg" firstAttribute="centerX" secondItem="cr3-cj-2xr" secondAttribute="centerX" id="HfV-dT-4pG"/>
+                            <constraint firstItem="GEP-Xz-Yt4" firstAttribute="top" secondItem="OAb-lw-zGS" secondAttribute="top" id="III-Ai-rVd"/>
+                            <constraint firstItem="GEP-Xz-Yt4" firstAttribute="centerX" secondItem="OAb-lw-zGS" secondAttribute="centerX" id="LsA-66-xDm"/>
+                            <constraint firstItem="XQ3-Yh-bRk" firstAttribute="top" secondItem="qc3-bI-fWx" secondAttribute="bottom" constant="42" id="PVt-zg-g3I"/>
+                            <constraint firstItem="XQ3-Yh-bRk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="QHi-FA-KL3"/>
+                            <constraint firstItem="OAb-lw-zGS" firstAttribute="top" secondItem="XQ3-Yh-bRk" secondAttribute="bottom" constant="19" id="VGX-G5-inP"/>
+                            <constraint firstItem="lus-eC-JTg" firstAttribute="baseline" secondItem="cr3-cj-2xr" secondAttribute="baseline" id="Xk1-Ub-hJ0"/>
+                            <constraint firstItem="bJX-vP-Uln" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Z4A-0y-abP"/>
+                            <constraint firstItem="bJX-vP-Uln" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="341" id="eEs-Rx-SVj"/>
+                            <constraint firstItem="XQ3-Yh-bRk" firstAttribute="centerX" secondItem="cr3-cj-2xr" secondAttribute="centerX" id="ehH-Lh-7Nh"/>
+                            <constraint firstItem="XQ3-Yh-bRk" firstAttribute="top" secondItem="lus-eC-JTg" secondAttribute="bottom" constant="8" symbolic="YES" id="eot-lv-dfO"/>
+                            <constraint firstItem="XQ3-Yh-bRk" firstAttribute="centerX" secondItem="OAb-lw-zGS" secondAttribute="centerX" id="oI2-vI-rqd"/>
+                            <constraint firstItem="bJX-vP-Uln" firstAttribute="leading" secondItem="UhO-4p-UkQ" secondAttribute="leading" id="wxQ-tM-Ibk"/>
+                            <constraint firstItem="XQ3-Yh-bRk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y92-Nk-VCy"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ProgressView" destination="bJX-vP-Uln" id="cte-uu-Wjg"/>
+                        <outlet property="closestDeviceIsLabel" destination="OAb-lw-zGS" id="leI-Kv-rw9"/>
+                        <outlet property="closestDistanceLabel" destination="UhO-4p-UkQ" id="7pq-o0-DWG"/>
+                        <outlet property="currentlyScanningLabel" destination="GEP-Xz-Yt4" id="dsj-97-OME"/>
+                        <outlet property="displaySafeLabel" destination="lus-eC-JTg" id="tOG-Vw-fti"/>
+                        <outlet property="displayUnsafeLabel" destination="cr3-cj-2xr" id="sHU-Eu-Iza"/>
+                        <outlet property="instructionsLabel1" destination="qc3-bI-fWx" id="H0K-Wz-lri"/>
+                        <outlet property="startScanButton" destination="XQ3-Yh-bRk" id="sqh-Yb-qMK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-215.8878504672897" y="53.131749460043203"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
